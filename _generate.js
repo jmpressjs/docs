@@ -67,7 +67,7 @@ function done() {
 }
 
 function writeOut() {
-	fs.readFile(path.join(__dirname, "_template.html"), "utf-8", function(err, template) {
+	fs.readFile(path.join(__dirname, "_template._html"), "utf-8", function(err, template) {
 		if(err) throw err;
 		files.forEach(function(file) {
 			fs.writeFile(file.htmlFile, template.replace("######", file.html), "utf-8", function(err) {
