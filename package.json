@@ -1,0 +1,8 @@
+{
+	"name": "jmpressjs-docs",
+	"version": "0.0.0",
+	"private": true,
+	"dependencies": {
+		"marked": "https://github.com/jmpressjs/marked/tarball/master"
+	}
+}

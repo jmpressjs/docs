@@ -1,4 +1,63 @@
 /* TODO */
 body {
-	font-family: "Headland One"
+	font-family: "Headland One","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	background-color: #EEE;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+
+.header {
+	margin: 0px;
+	padding: 10px;
+	padding-left: 30px;
+	border-bottom: 2px solid #BCD;
+	background-color: #C7D7E7;
+	font-size: 170%;
+}
+
+.nav, .content {
+	padding: 0px;
+	margin: 10px;
+	margin-top: 1em;
+}
+
+li {
+	display: inline;
+}
+
+.nav-header {
+	margin-top: 0.5em;
+	display: block;
+	font-weight: bold;
+}
+
+@media (min-width: 800px) {
+	.nav {
+		list-style: none;
+		float: left;
+		width: 14%;
+		padding: 20px;
+		margin: 0px;
+	}
+
+	.nav-header {
+		margin-top: 1.5em;
+	}
+
+	li {
+		margin-top: 0.2em;
+		display: list-item;
+	}
+
+	.content {
+		float: left;
+		width: 80%;
+		margin: 0px;
+	}
 }
