@@ -1,10 +1,10 @@
 # Getting started
 
-The only required files are [jQuery](http://jquery.com) and [jmpress.js](#builder) to use.
+The only required files are [jQuery](http://jquery.com) and [jmpress.js](http://jmpressjs.github.com/customize) to use.
 
 For a quick and simple example look at the [examples/simple/index.html](https://github.com/shama/jmpress.js/blob/beta/examples/simple/index.html) and [examples/simple/simple.css](https://github.com/shama/jmpress.js/blob/beta/examples/simple/simple.css).
 
-It's good to look at [all examples](#docs-examples) to get a overview what's possible before starting a complex solution.
+It's good to look at [all examples](examples.html) to get a overview what's possible before starting a complex solution.
 If you are not sure, you may ask.
 
 ## Migrating from impress.js

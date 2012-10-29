@@ -112,7 +112,7 @@ $('#jmpress').jmpress('canvas').append(newStep);
 $('#jmpress').jmpress('init', newStep);
 ```
 
-See the dynamic form [example](#docs-examples)
+See the dynamic form [example](examples.html)
 
 ### `method` initialized()
 
