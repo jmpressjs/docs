@@ -11,7 +11,7 @@ Thank you for using and contributing to jmpress.js!
 
 ## Edit & Build
 
-All the source files are located in the `src/` folder. They are broken up into components and plugins to allow users to build their own [customized version](#builder) of jmpress.js.
+All the source files are located in the `src/` folder. They are broken up into components and plugins to allow users to build their own [customized version](http://jmpressjs.github.com/customize) of jmpress.js.
 
 ### Grunt
 

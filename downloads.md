@@ -1,6 +1,6 @@
 # Downloads
 
-You can create your own version of jmpress.js with our [Custom Downloader](#builder).
+You can create your own version of jmpress.js with our [Custom Downloader](http://jmpressjs.github.com/customize).
 
 Otherwise download a prebuilt copy:
 
