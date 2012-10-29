@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://fonts.googleapis.com/css?family=Quicksand|Headland+One" rel="stylesheet" type="text/css"/>
+<link href="_style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 class="header">jmpress.js docs</h1>
+<div class="row">
+<div class="sidebar">
+<ul class="nav">
+<li><a href="index.html">Getting Started</a></li>
+<li><a href="basic.html">Basic Usage</a></li>
+<li><a href="inline.html">Inline Attributes</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li class="nav-header">Basic Components</li>
+<li><a href="circular.html">Circular Stepping</a></li>
+<li><a href="active.html">Active</a></li>
+<li><a href="viewport.html">Viewport</a></li>
+<li><a href="mobile.html">Mobile</a></li>
+<li class="nav-header">Advanced Components</li>
+<li><a href="ways.html">Ways Routing</a></li>
+<li><a href="start.html">Starting Step</a></li>
+<li><a href="hash.html">Hash in URL</a></li>
+<li><a href="ajax.html">Ajax</a></li>
+<li><a href="core.html">Core</a></li>
+<li class="nav-header">Expert Components</li>
+<li><a href="templates.html">Templates</a></li>
+<li><a href="animation.html">Animation</a></li>
+<li><a href="keyboard.html">Keyboard</a></li>
+<li><a href="mouse.html">Mouse</a></li>
+<li><a href="jqevents.html">jQuery Events</a></li>
+<li><a href="near.html">Near</a></li>
+<li class="nav-header">Plugins</li>
+<li><a href="plugin.html">Writing a Plugin</a></li>
+<li><a href="pluginduration.html">Duration</a></li>
+<li><a href="pluginsecondary.html">Secondary</a></li>
+<li><a href="plugintoggle.html">Toggle</a></li>
+<li class="nav-header">Support</li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="help.html">Where To Get Help</a></li>
+<li><a href="contribute.html">Contribute</a></li></ul>
+</div>
+<div class="content">
+<h1>Writing a Plugin</h1>
+<p>To extend jmpress.js, simply create a new js file and then add the script to your website or presentation HTML. It is wise to wrap your plugin within a closure:
+
+</p>
+<pre><code class="lang-javascript">(function( $, document, window, undefined ) {
+    // Plugin Code Will Go Here
+}(jQuery, document, window));</code></pre>
+<p>Now we can add a new option to jmpress by using the defaults method:
+
+</p>
+<pre><code class="lang-javascript">(function( $, document, window, undefined ) {
+    $.jmpress(&quot;defaults&quot;).withMeat = &#39;Yum! Meat!&#39;;
+})(jQuery, document, window);</code></pre>
+<p>Now the config option &#39;withMeat&#39; will be settable when initiating jmpress and will default to &#39;Yum! Meat!&#39;. Let&#39;s go further and add some more meat to our plugin:
+
+</p>
+<pre><code class="lang-javascript">(function( $, document, window, undefined ) {
+    $.jmpress(&quot;defaults&quot;).withMeat = &#39;Yum! Meat!&#39;;
+    function meat( step, what ) {
+        $(step).html( what );
+    }
+    $.jmpress(&#39;initStep&#39;, function( step, eventData ) {
+        meat( step, eventData.settings.withMeat );
+    });
+}(jQuery, document, window));</code></pre>
+<p>We have created a &#39;meat&#39; method available only within our plugin. Then we are calling this method as each step is initialized to replace the HTML in every step to &#39;Yum! Meat!&#39;.
+
+</p>
+<p>You can add your own events to jmpress using the &#39;register&#39; method and then call it upon an event:
+
+</p>
+<pre><code class="lang-javascript">(function( $, document, window, undefined ) {
+    $.jmpress(&quot;defaults&quot;).withMeat = &#39;Yum! Meat!&#39;;
+    $.extend(true, $.jmpress(&#39;defaults&#39;).keyboard.keys, {
+        77: &#39;meat&#39; // &#39;m&#39; key for meat
+    });
+    $.jmpress(&quot;register&quot;, &quot;meat&quot;, function() {
+        var step = $(this).jmpress(&#39;active&#39;)
+        step.html( $(this).jmpress(&quot;settings&quot;).withMeat );
+    });
+}(jQuery, document, window));</code></pre>
+<p>With this plugin, any time the &#39;m&#39; key is pressed the active slide HTML will be replace with &#39;Yum! Meat!&#39;.
+
+</p>
+<p>Take a look at the core plugins in jmpress.js or the extra plugins in the <code>/plugins</code> folder for more examples.
+
+</p>
+<p>If you have written a plugin for jmpress.js please let us know!
+</p>
+
+</div>
+</div>
+</body>
+</html>

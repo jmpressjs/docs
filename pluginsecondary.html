@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://fonts.googleapis.com/css?family=Quicksand|Headland+One" rel="stylesheet" type="text/css"/>
+<link href="_style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 class="header">jmpress.js docs</h1>
+<div class="row">
+<div class="sidebar">
+<ul class="nav">
+<li><a href="index.html">Getting Started</a></li>
+<li><a href="basic.html">Basic Usage</a></li>
+<li><a href="inline.html">Inline Attributes</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li class="nav-header">Basic Components</li>
+<li><a href="circular.html">Circular Stepping</a></li>
+<li><a href="active.html">Active</a></li>
+<li><a href="viewport.html">Viewport</a></li>
+<li><a href="mobile.html">Mobile</a></li>
+<li class="nav-header">Advanced Components</li>
+<li><a href="ways.html">Ways Routing</a></li>
+<li><a href="start.html">Starting Step</a></li>
+<li><a href="hash.html">Hash in URL</a></li>
+<li><a href="ajax.html">Ajax</a></li>
+<li><a href="core.html">Core</a></li>
+<li class="nav-header">Expert Components</li>
+<li><a href="templates.html">Templates</a></li>
+<li><a href="animation.html">Animation</a></li>
+<li><a href="keyboard.html">Keyboard</a></li>
+<li><a href="mouse.html">Mouse</a></li>
+<li><a href="jqevents.html">jQuery Events</a></li>
+<li><a href="near.html">Near</a></li>
+<li class="nav-header">Plugins</li>
+<li><a href="plugin.html">Writing a Plugin</a></li>
+<li><a href="pluginduration.html">Duration</a></li>
+<li><a href="pluginsecondary.html">Secondary</a></li>
+<li><a href="plugintoggle.html">Toggle</a></li>
+<li class="nav-header">Support</li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="help.html">Where To Get Help</a></li>
+<li><a href="contribute.html">Contribute</a></li></ul>
+</div>
+<div class="content">
+<h1>Plugin: Secondary</h1>
+<p>The secondary plugin applies an alternative step config, on a chosen condition.
+
+</p>
+<p><em>Alternative step configuration is only useable via template.</em>
+
+</p>
+<h3>Conditions</h3>
+<p>The condition can only be set by template <code>{ secondary: &lt;string&gt; }</code>.
+
+</p>
+<ul>
+<li><code>self</code>: If the step is active.</li>
+<li><code>siblings</code>: If a sibling is active. (Including self)</li>
+<li><code>siblings self</code>: If a sibling is active. (Excluding self)</li>
+<li><code>grandchildren</code>: If a child or grand child is active.</li>
+<li><code>grandchildren self</code>: If the step, a child or grand child is active.</li>
+</ul>
+<h3>Alternative config</h3>
+<p>The alternative config is described by prefixing the attribute by <code>secondary</code> (But stay in camel case).
+
+</p>
+<p>Alternative <code>{ x: ..., rotateZ: ... }</code> is <code>{ secondaryX: ..., secondaryRotateZ: ... }</code>.
+
+</p>
+<p>Because objects in templates are automatically expanded it can be simplified:
+
+</p>
+<pre><code class="lang-javascript">{
+    x: ...,
+    rotateZ: ...,
+    secondary: {
+        &quot;&quot;: &quot;siblings&quot;,
+        x: ...,
+        rotateZ: ...,
+    }
+}</code></pre>
+<h3>Examples</h3>
+<ul>
+<li><a href="http://shama.github.com/jmpress.js/examples/vacation/">vacation</a></li>
+<li><a href="http://shama.github.com/jmpress.js/examples/tab-control/">tab control</a></li>
+</ul>
+
+</div>
+</div>
+</body>
+</html>

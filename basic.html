@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://fonts.googleapis.com/css?family=Quicksand|Headland+One" rel="stylesheet" type="text/css"/>
+<link href="_style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 class="header">jmpress.js docs</h1>
+<div class="row">
+<div class="sidebar">
+<ul class="nav">
+<li><a href="index.html">Getting Started</a></li>
+<li><a href="basic.html">Basic Usage</a></li>
+<li><a href="inline.html">Inline Attributes</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li class="nav-header">Basic Components</li>
+<li><a href="circular.html">Circular Stepping</a></li>
+<li><a href="active.html">Active</a></li>
+<li><a href="viewport.html">Viewport</a></li>
+<li><a href="mobile.html">Mobile</a></li>
+<li class="nav-header">Advanced Components</li>
+<li><a href="ways.html">Ways Routing</a></li>
+<li><a href="start.html">Starting Step</a></li>
+<li><a href="hash.html">Hash in URL</a></li>
+<li><a href="ajax.html">Ajax</a></li>
+<li><a href="core.html">Core</a></li>
+<li class="nav-header">Expert Components</li>
+<li><a href="templates.html">Templates</a></li>
+<li><a href="animation.html">Animation</a></li>
+<li><a href="keyboard.html">Keyboard</a></li>
+<li><a href="mouse.html">Mouse</a></li>
+<li><a href="jqevents.html">jQuery Events</a></li>
+<li><a href="near.html">Near</a></li>
+<li class="nav-header">Plugins</li>
+<li><a href="plugin.html">Writing a Plugin</a></li>
+<li><a href="pluginduration.html">Duration</a></li>
+<li><a href="pluginsecondary.html">Secondary</a></li>
+<li><a href="plugintoggle.html">Toggle</a></li>
+<li class="nav-header">Support</li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="help.html">Where To Get Help</a></li>
+<li><a href="contribute.html">Contribute</a></li></ul>
+</div>
+<div class="content">
+<h1>Basic Usage</h1>
+<p><strong>Create a root element:</strong>
+
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;&lt;/div&gt;</code></pre>
+<p><strong>Fill it up with steps:</strong>
+
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;
+    &lt;div class=&quot;step&quot;&gt;Slide 1&lt;/div&gt;
+    &lt;div class=&quot;step&quot;&gt;Slide 2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>Tell jQuery to run it:</strong>
+
+</p>
+<pre><code class="lang-javascript">$(function() {
+    $(&#39;#jmpress&#39;).jmpress();
+});</code></pre>
+<p><strong>Configure jmpress</strong>
+
+</p>
+<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
+    stepSelector: &#39;li&#39;
+});</code></pre>
+<p><strong>Customize the hash id of each slide</strong>
+The id of the step will appear as the URI hash to recall the slide later. If you don&#39;t give your steps ids then the id <code>step-N</code> will be used.
+
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;name-of-slide&quot; class=&quot;step&quot; 
+        data-x=&quot;3500&quot; data-y=&quot;-850&quot; 
+        data-rotate=&quot;270&quot; data-scale=&quot;6&quot;&gt;
+    Slide 1
+&lt;/div&gt;</code></pre>
+<h2>Structure of the remaining docs</h2>
+<p>The stuff in the remaining docs has three categories:
+
+</p>
+<ul>
+<li><code>property</code></li>
+<li><code>method</code></li>
+<li><code>callback</code></li>
+</ul>
+<h3><code>property</code></h3>
+<p>A <code>property</code> can be set while initializing jmpress or modified on runtime.
+
+</p>
+<p><strong>While initializing</strong>
+Just pass a object to the jmpress init function containing the <code>property</code>
+
+</p>
+<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
+    setting: value
+});</code></pre>
+<p><strong>On runtime</strong>
+You can run the <code>method</code> &quot;settings&quot; to the the current settings object, which contains all <code>properties</code>.
+Not every <code>property</code> can be modified after initializing.
+Many <code>properties</code> apply only after the next selection process, which is triggered i. e. on step changes.
+You may need to trigger it manually with <code>$(&#39;#jmpress&#39;).jmpress(&#39;reselect&#39;)</code>.
+
+</p>
+<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress(&#39;settings&#39;).setting = newValue;</code></pre>
+<h3><code>method</code></h3>
+<p>A <code>method</code> is a public function available on a jmpress instance or statically.
+
+</p>
+<p>A <code>method</code> with the signature <code>methodName(param1, param2)</code> can be called like this:
+
+</p>
+<pre><code class="lang-javascript">// on the jmpress instance
+$(&#39;#jmpress&#39;).jmpress(&#39;methodName&#39;, param1, param2);
+// statically
+$.jmpress(&#39;methodName&#39;, param1, param2)</code></pre>
+<h3><code>callback</code></h3>
+<p>You can set a <code>callback</code> for a jmpress event, which is called when the event occurs.
+
+</p>
+<pre><code class="lang-javascript">// add an event handler
+$(&#39;#jmpress&#39;).jmpress(&#39;callbackName&#39;, function(step, eventData) {...});</code></pre>
+<p>A <code>callback</code> handler should have the following parameters:
+
+</p>
+<ul>
+<li><code>step</code> the step</li>
+<li><code>eventData</code> a object containing more info about the event. At least the following properties:<ul>
+<li><code>settings</code> the current settings object. The same as <code>$(x).jmpress(&#39;settings&#39;)</code> returns.</li>
+<li><code>current</code> the current state object. Plugins can store their state here.</li>
+<li><code>container</code> the jmpress container</li>
+<li><code>parents</code> all parents of the step, or null</li>
+<li><code>jmpress</code> the jmpress element</li>
+<li>and more properties specific for the events.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</body>
+</html>

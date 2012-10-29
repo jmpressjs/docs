@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://fonts.googleapis.com/css?family=Quicksand|Headland+One" rel="stylesheet" type="text/css"/>
+<link href="_style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 class="header">jmpress.js docs</h1>
+<div class="row">
+<div class="sidebar">
+<ul class="nav">
+<li><a href="index.html">Getting Started</a></li>
+<li><a href="basic.html">Basic Usage</a></li>
+<li><a href="inline.html">Inline Attributes</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li class="nav-header">Basic Components</li>
+<li><a href="circular.html">Circular Stepping</a></li>
+<li><a href="active.html">Active</a></li>
+<li><a href="viewport.html">Viewport</a></li>
+<li><a href="mobile.html">Mobile</a></li>
+<li class="nav-header">Advanced Components</li>
+<li><a href="ways.html">Ways Routing</a></li>
+<li><a href="start.html">Starting Step</a></li>
+<li><a href="hash.html">Hash in URL</a></li>
+<li><a href="ajax.html">Ajax</a></li>
+<li><a href="core.html">Core</a></li>
+<li class="nav-header">Expert Components</li>
+<li><a href="templates.html">Templates</a></li>
+<li><a href="animation.html">Animation</a></li>
+<li><a href="keyboard.html">Keyboard</a></li>
+<li><a href="mouse.html">Mouse</a></li>
+<li><a href="jqevents.html">jQuery Events</a></li>
+<li><a href="near.html">Near</a></li>
+<li class="nav-header">Plugins</li>
+<li><a href="plugin.html">Writing a Plugin</a></li>
+<li><a href="pluginduration.html">Duration</a></li>
+<li><a href="pluginsecondary.html">Secondary</a></li>
+<li><a href="plugintoggle.html">Toggle</a></li>
+<li class="nav-header">Support</li>
+<li><a href="examples.html">Examples</a></li>
+<li><a href="help.html">Where To Get Help</a></li>
+<li><a href="contribute.html">Contribute</a></li></ul>
+</div>
+<div class="content">
+<h1>Templates</h1>
+<p>This component handles templates. It handles the <code>data-template</code> attribute and registers the template.
+
+</p>
+<p>For more complex builds consider using templates rather then setting attributes on each step.
+
+</p>
+<p>First create and register your template with jmpress:
+
+</p>
+<pre><code class="lang-javascript">$.jmpress(&quot;template&quot;, &quot;mytemplate&quot;, {
+  x: 1000, y: -2000, scale: 10,
+  rotateY: 60,
+  rotate: { x: 60 } // is automatically converted to camel case
+});</code></pre>
+<p>Then use your template in your HTML:
+
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;
+  &lt;div class=&quot;step&quot; data-template=&quot;mytemplate&quot;&gt;...&lt;/div&gt;
+  ...
+&lt;/div&gt;</code></pre>
+<p>Templates can also be applied to nested steps:
+
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;
+  &lt;div class=&quot;step&quot; data-template=&quot;mytemplate&quot;&gt;
+    &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="lang-javascript">$.jmpress(&quot;template&quot;, &quot;mytemplate&quot;, {
+  x: 1000, y: -2000, scale: 10,
+  children: [
+    { x: -300, y: -100, scale: 0.2 },
+    { x: -100, y: -100, scale: 0.2 },
+    { x: 100, y: -100, scale: 0.2 }
+  ]
+});</code></pre>
+<p>Rather then setting the values manually you can provide a method to setup each step programmatically:
+
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot; data-template=&quot;mytemplate&quot;&gt;
+    &lt;div class=&quot;step&quot;&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step&quot;&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="lang-javascript">$.jmpress(&quot;template&quot;, &quot;mytemplate&quot;, {
+    children: function( idx, current_child, children ) {
+        return {
+            y: 400
+            ,x: -300 + idx * 300
+            ,template: &quot;mytemplate&quot;
+            ,scale: 0.3
+        }
+    }
+});</code></pre>
+<h3><code>method</code> template( templateName, templateData )</h3>
+<p>Adds or modify a template. If it&#39;s already defined then the old template is
+extended with the new properties.
+
+</p>
+<h3><code>method</code> apply( selector, templateName )</h3>
+<p>Applies the template to all selected steps.
+
+</p>
+<h3><code>method</code> apply( selector, templateData )</h3>
+<p>Applies the template directly by template data object.
+
+</p>
+<h3><code>method</code> apply( selector, arrayOfTemplateDatas )</h3>
+<p>Applies template data to an array of selected items.</p>
+
+</div>
+</div>
+</body>
+</html>
