@@ -19,9 +19,7 @@ We use the command line build tool: [grunt](https://github.com/cowboy/grunt). It
 
 Then navigate to your copy of jmpress.js and run the command: `grunt` (windows: `grunt.cmd`) to build. You can also use the command `grunt watch` to continuously build jmpress.js as you edit.
 
-The output files will be located in the `dist/` folder. Additionally `docs/asserts` and `docs/index.html` are output files for the documentation. Please do not edit any file in this folders as they are automatically generated. You can delete them and they will be regenerated.
-
-Files in `docs/asserts` will have a hash of the content in their name (for better caching), so if you compile often there may be many different files in the folder. You can delete those as well.
+The output files will be located in the `dist/` folder. Please do not edit any file in this folders as they are automatically generated. You can delete them and they will be regenerated.
 
 ### Testing
 
