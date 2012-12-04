@@ -1,23 +1,23 @@
 # Examples
 
-* [simple](http://shama.github.com/jmpress.js/examples/simple/)
+* [simple](http://jmpressjs.github.com/jmpress.js/examples/simple/)
 
-* [impress.js](http://shama.github.com/jmpress.js/examples/impress/)
+* [impress.js](http://jmpressjs.github.com/jmpress.js/examples/impress/)
 
-* [vacation](http://shama.github.com/jmpress.js/examples/vacation/)
+* [vacation](http://jmpressjs.github.com/jmpress.js/examples/vacation/)
 
-* [animation](http://shama.github.com/jmpress.js/examples/animation/)
+* [animation](http://jmpressjs.github.com/jmpress.js/examples/animation/)
 
-* [automatic layout](http://shama.github.com/jmpress.js/examples/automatic-layout/)
+* [automatic layout](http://jmpressjs.github.com/jmpress.js/examples/automatic-layout/)
 
-* [nested templates](http://shama.github.com/jmpress.js/examples/nested-templates/)
+* [nested templates](http://jmpressjs.github.com/jmpress.js/examples/nested-templates/)
 
-* [zoomable steps](http://shama.github.com/jmpress.js/examples/zoomable/)
+* [zoomable steps](http://jmpressjs.github.com/jmpress.js/examples/zoomable/)
 
-* [ajax](http://shama.github.com/jmpress.js/examples/ajax/)
+* [ajax](http://jmpressjs.github.com/jmpress.js/examples/ajax/)
 
-* [cube](http://shama.github.com/jmpress.js/examples/cube/)
+* [cube](http://jmpressjs.github.com/jmpress.js/examples/cube/)
 
-* [dynamic form](http://shama.github.com/jmpress.js/examples/form-dynamic/)
+* [dynamic form](http://jmpressjs.github.com/jmpress.js/examples/form-dynamic/)
 
-* [tab control](http://shama.github.com/jmpress.js/examples/tab-control/)
+* [tab control](http://jmpressjs.github.com/jmpress.js/examples/tab-control/)
