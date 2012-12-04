@@ -4,7 +4,7 @@ var https = require("https");
 
 var files = fs.readdirSync(__dirname)
 	.filter(function(file) {
-		return /^.*\.md$/.test(file);
+		return /^[^README]*\.md$/.test(file);
 	})
 	.map(function(file) {
 		var name = file.replace(/\.md$/, "");
