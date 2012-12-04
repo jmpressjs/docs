@@ -2,7 +2,7 @@
 
 If you are stuck or have a question about jmpress.js, there are a few places to get help:
 
-* [Github Issues](https://github.com/shama/jmpress.js/issues)
+* [Github Issues](https://github.com/jmpressjs/jmpress.js/issues)
   Create a new issue. We take support questions there as well. Please provide a link to
   an example of your issue, if possible.
 
