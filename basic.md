@@ -105,3 +105,12 @@ A `callback` handler should have the following parameters:
  * `parents` all parents of the step, or null
  * `jmpress` the jmpress element
  * and more properties specific for the events.
+
+You can also add a callback handler by adding it to the options object on jmpress.js init:
+
+``` javascript
+$('#jmpress').jmpress({
+  // You options
+  callbackName: function(step, eventData) {...}
+});
+```
