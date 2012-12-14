@@ -61,3 +61,9 @@ li {
 		margin: 0px;
 	}
 }
+
+.editpage {
+	float: right;
+	font-style: italic;
+	font-size: 0.8em;
+}
