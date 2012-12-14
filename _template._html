@@ -73,7 +73,8 @@
 </ul>
 </div>
 <div class="content">
-######
+{{html}}
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/{{name}}.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>
