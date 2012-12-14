@@ -79,7 +79,10 @@ function writeOut() {
 	fs.readFile(path.join(__dirname, "_template._html"), "utf-8", function(err, template) {
 		if(err) throw err;
 		files.forEach(function(file) {
-			fs.writeFile(file.htmlFile, template.replace("######", file.html), "utf-8", function(err) {
+			Object.keys(file).forEach(function(key) {
+				template = template.replace('{{' + key + '}}', file[key]);
+			});
+			fs.writeFile(file.htmlFile, template, "utf-8", function(err) {
 				if(err) throw err;
 			});
 		});

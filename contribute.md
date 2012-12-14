@@ -46,4 +46,4 @@ Please work and pull against the `dev` branch to make sure you are using the lat
 ## Docs
 
 If you find an error or something missing please edit and submit a pull request.
-There is an **Edit This Page** button in the top right corner.
+There is an **Edit This Page** button on the bottom of each page or fork then clone the docs with git. Thank you for contributing!
