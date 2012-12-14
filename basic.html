@@ -73,107 +73,27 @@
 </ul>
 </div>
 <div class="content">
-<h1>Basic Usage</h1>
-<p><strong>Create a root element:</strong>
+<h1>Active</h1>
+<p>This component manages the step active settings.
 
 </p>
-<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;&lt;/div&gt;</code></pre>
-<p><strong>Fill it up with steps:</strong>
+<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
+<p>A class name to set on the current step.
 
 </p>
-<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;
-    &lt;div class=&quot;step&quot;&gt;Slide 1&lt;/div&gt;
-    &lt;div class=&quot;step&quot;&gt;Slide 2&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-<p><strong>Tell jQuery to run it:</strong>
+<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
+<p>A class name to set on all parents of the current step.
 
 </p>
-<pre><code class="lang-javascript">$(function() {
-    $(&#39;#jmpress&#39;).jmpress();
-});</code></pre>
-<p><strong>Configure jmpress</strong>
+<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
+<p>When a step is activated or selected.
 
 </p>
-<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
-    stepSelector: &#39;li&#39;
-});</code></pre>
-<p><strong>Customize the hash id of each slide</strong>
-The id of the step will appear as the URI hash to recall the slide later. If you don&#39;t give your steps ids then the id <code>step-N</code> will be used.
-
+<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
+<p>When a previously active step is de-activated or not
 </p>
-<pre><code class="lang-html">&lt;div id=&quot;name-of-slide&quot; class=&quot;step&quot; 
-        data-x=&quot;3500&quot; data-y=&quot;-850&quot; 
-        data-rotate=&quot;270&quot; data-scale=&quot;6&quot;&gt;
-    Slide 1
-&lt;/div&gt;</code></pre>
-<h2>Structure of the remaining docs</h2>
-<p>The stuff in the remaining docs has three categories:
 
-</p>
-<ul>
-<li><code>property</code></li>
-<li><code>method</code></li>
-<li><code>callback</code></li>
-</ul>
-<h3><code>property</code></h3>
-<p>A <code>property</code> can be set while initializing jmpress or modified on runtime.
-
-</p>
-<p><strong>While initializing</strong>
-Just pass a object to the jmpress init function containing the <code>property</code>
-
-</p>
-<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
-    setting: value
-});</code></pre>
-<p><strong>On runtime</strong>
-You can run the <code>method</code> &quot;settings&quot; to the the current settings object, which contains all <code>properties</code>.
-Not every <code>property</code> can be modified after initializing.
-Many <code>properties</code> apply only after the next selection process, which is triggered i. e. on step changes.
-You may need to trigger it manually with <code>$(&#39;#jmpress&#39;).jmpress(&#39;reselect&#39;)</code>.
-
-</p>
-<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress(&#39;settings&#39;).setting = newValue;</code></pre>
-<h3><code>method</code></h3>
-<p>A <code>method</code> is a public function available on a jmpress instance or statically.
-
-</p>
-<p>A <code>method</code> with the signature <code>methodName(param1, param2)</code> can be called like this:
-
-</p>
-<pre><code class="lang-javascript">// on the jmpress instance
-$(&#39;#jmpress&#39;).jmpress(&#39;methodName&#39;, param1, param2);
-// statically
-$.jmpress(&#39;methodName&#39;, param1, param2)</code></pre>
-<h3><code>callback</code></h3>
-<p>You can set a <code>callback</code> for a jmpress event, which is called when the event occurs.
-
-</p>
-<pre><code class="lang-javascript">// add an event handler
-$(&#39;#jmpress&#39;).jmpress(&#39;callbackName&#39;, function(step, eventData) {...});</code></pre>
-<p>A <code>callback</code> handler should have the following parameters:
-
-</p>
-<ul>
-<li><code>step</code> the step</li>
-<li><code>eventData</code> a object containing more info about the event. At least the following properties:<ul>
-<li><code>settings</code> the current settings object. The same as <code>$(x).jmpress(&#39;settings&#39;)</code> returns.</li>
-<li><code>current</code> the current state object. Plugins can store their state here.</li>
-<li><code>container</code> the jmpress container</li>
-<li><code>parents</code> all parents of the step, or null</li>
-<li><code>jmpress</code> the jmpress element</li>
-<li>and more properties specific for the events.</li>
-</ul>
-</li>
-</ul>
-<p>You can also add a callback handler by adding it to the options object on jmpress.js init:
-
-</p>
-<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
-  // You options
-  callbackName: function(step, eventData) {...}
-});</code></pre>
-
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>

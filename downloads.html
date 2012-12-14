@@ -73,35 +73,27 @@
 </ul>
 </div>
 <div class="content">
-<h1>Downloads</h1>
-<p>You can create your own version of jmpress.js with our <a href="http://jmpressjs.github.com/customize">Custom Downloader</a>.
+<h1>Active</h1>
+<p>This component manages the step active settings.
 
 </p>
-<p>Otherwise download a prebuilt copy:
+<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
+<p>A class name to set on the current step.
 
 </p>
-<p>(Right click them and save to...)
+<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
+<p>A class name to set on all parents of the current step.
 
 </p>
-<ul>
-<li><a href="http://jmpressjs.github.com/jmpress.js/dist/jmpress.js">jmpress.js</a> - <a href="http://jmpressjs.github.com/jmpress.js/dist/jmpress.min.js">jmpress.min.js</a></li>
-<li><a href="http://jmpressjs.github.com/jmpress.js/dist/jmpress.allplugins.js">jmpress.allplugins.js</a> - <a href="http://jmpressjs.github.com/jmpress.js/dist/jmpress.allplugins.min.js">jmpress.allplugins.min.js</a></li>
-<li><a href="http://jmpressjs.github.com/jmpress.js/dist/jmpress.all.js">jmpress.all.js</a> - <a href="http://jmpressjs.github.com/jmpress.js/dist/jmpress.all.min.js">jmpress.all.min.js</a></li>
-</ul>
-<p>And the plugins:
+<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
+<p>When a step is activated or selected.
 
 </p>
-<ul>
-<li><a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.duration.js">jmpress.duration.js</a> - <a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.duration.min.js">jmpress.duration.min.js</a></li>
-<li><a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.secondary.js">jmpress.secondary.js</a> - <a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.secondary.min.js">jmpress.secondary.min.js</a></li>
-<li><a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.toggle.js">jmpress.toggle.js</a> - <a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.toggle.min.js">jmpress.toggle.min.js</a></li>
-<li><a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.presentation-mode.js">jmpress.presentation-mode.js</a> - <a href="http://jmpressjs.github.com/jmpress.js/dist/plugins/jmpress.presentation-mode.min.js">jmpress.presentation-mode.min.js</a><ul>
-<li><a href="http://jmpressjs.github.com/jmpress.js/presentation-screen.html">presentation-screen.html</a></li>
-</ul>
-</li>
-</ul>
-<p>The jmpress.demo.js file is only for our demo application and you should <strong>not</strong> use it.</p>
+<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
+<p>When a previously active step is de-activated or not
+</p>
 
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>

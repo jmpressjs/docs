@@ -73,18 +73,27 @@
 </ul>
 </div>
 <div class="content">
-<h1>Mouse</h1>
-<p>This component handles clicking to activate steps.
+<h1>Active</h1>
+<p>This component manages the step active settings.
 
 </p>
-<h3><code>property</code> mouse.clickSelects : <code>true</code></h3>
-<p>By default clicking to active a step is enabled. To disable:
+<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
+<p>A class name to set on the current step.
 
 </p>
-<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
-    mouse: { clickSelects: false }
-});</code></pre>
+<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
+<p>A class name to set on all parents of the current step.
 
+</p>
+<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
+<p>When a step is activated or selected.
+
+</p>
+<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
+<p>When a previously active step is de-activated or not
+</p>
+
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>

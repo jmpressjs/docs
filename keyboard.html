@@ -73,44 +73,27 @@
 </ul>
 </div>
 <div class="content">
-<h1>Keyboard</h1>
-<p>This component handles navigation with the keyboard. It also offers a binding mechanism for other components, plugins and the user.
+<h1>Active</h1>
+<p>This component manages the step active settings.
 
 </p>
-<p>Example:
+<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
+<p>A class name to set on the current step.
 
 </p>
-<pre><code class="lang-javascript">$(selector).jmpress({
-    keyboard: {
-        keys: {
-            189: [&#39;select&#39;, &#39;#overview&#39;]
-        }
-    }
-});</code></pre>
-<p>In this example we are binding the &#39;-&#39; key (key code 189) to select a step we have named &#39;overview&#39;.
+<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
+<p>A class name to set on all parents of the current step.
 
 </p>
-<h3><code>property</code> keyboard.keys : <code>{33: &quot;prev&quot;, 32: &quot;next&quot;, ...}</code></h3>
-<p>Bind a key to a jmpress command. Set it to null to remove an existing key binding.
+<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
+<p>When a step is activated or selected.
 
 </p>
-<p>Set it to a string to get the jmpress command invoked.
-
-</p>
-<p>Set it to a string containing &quot;:&quot; (ex. &quot;next:prev&quot;) to get the first command on default and the second on modified with the shift key.
-
-</p>
-<p>Set it to a array to apply the array as arguments a jmpress command (ex. [&quot;select&quot;, &quot;#some-cool-step&quot;]).
-
-</p>
-<h3><code>property</code> keyboard.ignore[TAGNAME] : <code>[32, 37, ...] as TAGNAME = &quot;INPUT&quot;</code></h3>
-<p>Ignore some keys on a specific tag name.
-
-</p>
-<h3><code>property</code> keyboard.use : <code>true</code></h3>
-<p>Whether the keyboard should be used to navigate in jmpress.
+<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
+<p>When a previously active step is de-activated or not
 </p>
 
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>

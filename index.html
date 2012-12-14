@@ -73,43 +73,27 @@
 </ul>
 </div>
 <div class="content">
-<h1>Getting started</h1>
-<p>The only required files are <a href="http://jquery.com">jQuery</a> and <a href="http://jmpressjs.github.com/customize">jmpress.js</a> to use.
+<h1>Active</h1>
+<p>This component manages the step active settings.
 
 </p>
-<p>For a quick and simple example look at the <a href="https://github.com/jmpressjs/jmpress.js/blob/beta/examples/simple/index.html">examples/simple/index.html</a> and <a href="https://github.com/jmpressjs/jmpress.js/blob/beta/examples/simple/simple.css">examples/simple/simple.css</a>.
+<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
+<p>A class name to set on the current step.
 
 </p>
-<p>It&#39;s good to look at <a href="examples.html">all examples</a> to get a overview what&#39;s possible before starting a complex solution.
-If you are not sure, you may ask.
+<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
+<p>A class name to set on all parents of the current step.
 
 </p>
-<h2>Migrating from impress.js</h2>
-<p>Currently jmpress.js includes all of the impress.js features and a lot more.
+<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
+<p>When a step is activated or selected.
 
 </p>
-<p>To migrate simply add jQuery, change impress.js to jmpress.js and call <code>$(selector).jmpress();</code> to initialize. Take a look at the <a href="http://jmpressjs.github.com/jmpress.js/examples/impress/">impress.js running on jmpress.js</a> example.
-
+<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
+<p>When a previously active step is de-activated or not
 </p>
-<p>If you use the impress.js api and you want to migrate:
 
-</p>
-<table>
-	<thead>
-		<tr><th align="left">impress.js</td><th align="left">jmpress.js</td></tr>
-	</thead>
-	<tbody>
-		<tr><td align="left">event       <code>impress:stepenter</code></td><td align="left">event      <code>enterStep</code></td></tr>
-		<tr><td align="left">event       <code>impress:stepleave</code></td><td align="left">event      <code>leaveStep</code></td></tr>
-		<tr><td align="left">event       <code>impress:init</code></td><td align="left">callback   <code>$(x).afterInit(...)</code></td></tr>
-		<tr><td align="left">api         <code>impress().init()</code></td><td align="left">api        <code>$(x).jmpress()</code></td></tr>
-		<tr><td align="left">api         <code>impress().goto()</code></td><td align="left">api        <code>$(x).jmpress(&quot;goTo&quot;, ...)</code></td></tr>
-		<tr><td align="left">attribute   <code>data-width</code>, <code>data-height</code></td><td align="left">attribute  <code>data-view-port-width</code>, <code>...-height</code></td></tr>
-		<tr><td align="left">attribute   <code>data-max-scale</code>, <code>data-min-scale</code></td><td align="left">setting    <code>data-view-port-max-scale</code>, <code>...-min-scale</code></td></tr>
-		<tr><td align="left">class       <code>impress-on-ID</code> on body</td><td align="left">class      <code>step-ID</code> on container</td></tr>
-	</tbody>
-</table>
-
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>

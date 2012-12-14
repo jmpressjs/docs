@@ -73,17 +73,27 @@
 </ul>
 </div>
 <div class="content">
-<h1>Plugin: Toggle</h1>
-<p>Bind a key to toggle the de/initialization of jmpress.js. Example:
+<h1>Active</h1>
+<p>This component manages the step active settings.
 
 </p>
-<pre><code class="lang-javascript">$(&quot;#jmpress&quot;).jmpress(&quot;toggle&quot;, 27, {
-    // jmpress options
-}); // Bind escape key</code></pre>
-<p>There is a optional 3rd boolean parameter which indicate the initial status of jmpress.js.
-Set it to <code>true</code> to automatically initialize jmpress.js.
+<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
+<p>A class name to set on the current step.
+
+</p>
+<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
+<p>A class name to set on all parents of the current step.
+
+</p>
+<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
+<p>When a step is activated or selected.
+
+</p>
+<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
+<p>When a previously active step is de-activated or not
 </p>
 
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>
