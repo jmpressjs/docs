@@ -166,6 +166,13 @@ $(&#39;#jmpress&#39;).jmpress(&#39;callbackName&#39;, function(step, eventData) 
 </ul>
 </li>
 </ul>
+<p>You can also add a callback handler by adding it to the options object on jmpress.js init:
+
+</p>
+<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
+  // You options
+  callbackName: function(step, eventData) {...}
+});</code></pre>
 
 </div>
 </div>
