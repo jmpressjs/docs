@@ -73,27 +73,50 @@
 </ul>
 </div>
 <div class="content">
-<h1>Active</h1>
-<p>This component manages the step active settings.
+<h1>Plugin: Secondary</h1>
+<p>The secondary plugin applies an alternative step config, on a chosen condition.
 
 </p>
-<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
-<p>A class name to set on the current step.
+<p><em>Alternative step configuration is only useable via template.</em>
 
 </p>
-<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
-<p>A class name to set on all parents of the current step.
+<h3>Conditions</h3>
+<p>The condition can only be set by template <code>{ secondary: &lt;string&gt; }</code>.
 
 </p>
-<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
-<p>When a step is activated or selected.
+<ul>
+<li><code>self</code>: If the step is active.</li>
+<li><code>siblings</code>: If a sibling is active. (Including self)</li>
+<li><code>siblings self</code>: If a sibling is active. (Excluding self)</li>
+<li><code>grandchildren</code>: If a child or grand child is active.</li>
+<li><code>grandchildren self</code>: If the step, a child or grand child is active.</li>
+</ul>
+<h3>Alternative config</h3>
+<p>The alternative config is described by prefixing the attribute by <code>secondary</code> (But stay in camel case).
 
 </p>
-<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
-<p>When a previously active step is de-activated or not
-</p>
+<p>Alternative <code>{ x: ..., rotateZ: ... }</code> is <code>{ secondaryX: ..., secondaryRotateZ: ... }</code>.
 
-<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
+</p>
+<p>Because objects in templates are automatically expanded it can be simplified:
+
+</p>
+<pre><code class="lang-javascript">{
+    x: ...,
+    rotateZ: ...,
+    secondary: {
+        &quot;&quot;: &quot;siblings&quot;,
+        x: ...,
+        rotateZ: ...,
+    }
+}</code></pre>
+<h3>Examples</h3>
+<ul>
+<li><a href="http://shama.github.com/jmpress.js/examples/vacation/">vacation</a></li>
+<li><a href="http://shama.github.com/jmpress.js/examples/tab-control/">tab control</a></li>
+</ul>
+
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/pluginsecondary.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>

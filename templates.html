@@ -73,27 +73,86 @@
 </ul>
 </div>
 <div class="content">
-<h1>Active</h1>
-<p>This component manages the step active settings.
+<h1>Templates</h1>
+<p>This component handles templates. It handles the <code>data-template</code> attribute and registers the template.
 
 </p>
-<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
-<p>A class name to set on the current step.
+<p>For more complex builds consider using templates rather then setting attributes on each step.
 
 </p>
-<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
-<p>A class name to set on all parents of the current step.
+<p>First create and register your template with jmpress:
 
 </p>
-<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
-<p>When a step is activated or selected.
+<pre><code class="lang-javascript">$.jmpress(&quot;template&quot;, &quot;mytemplate&quot;, {
+  x: 1000, y: -2000, scale: 10,
+  rotateY: 60,
+  rotate: { x: 60 } // is automatically converted to camel case
+});</code></pre>
+<p>Then use your template in your HTML:
 
 </p>
-<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
-<p>When a previously active step is de-activated or not
-</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;
+  &lt;div class=&quot;step&quot; data-template=&quot;mytemplate&quot;&gt;...&lt;/div&gt;
+  ...
+&lt;/div&gt;</code></pre>
+<p>Templates can also be applied to nested steps:
 
-<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot;&gt;
+  &lt;div class=&quot;step&quot; data-template=&quot;mytemplate&quot;&gt;
+    &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="lang-javascript">$.jmpress(&quot;template&quot;, &quot;mytemplate&quot;, {
+  x: 1000, y: -2000, scale: 10,
+  children: [
+    { x: -300, y: -100, scale: 0.2 },
+    { x: -100, y: -100, scale: 0.2 },
+    { x: 100, y: -100, scale: 0.2 }
+  ]
+});</code></pre>
+<p>Rather then setting the values manually you can provide a method to setup each step programmatically:
+
+</p>
+<pre><code class="lang-html">&lt;div id=&quot;jmpress&quot; data-template=&quot;mytemplate&quot;&gt;
+    &lt;div class=&quot;step&quot;&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step&quot;&gt;
+        &lt;div class=&quot;step&quot;&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="lang-javascript">$.jmpress(&quot;template&quot;, &quot;mytemplate&quot;, {
+    children: function( idx, current_child, children ) {
+        return {
+            y: 400
+            ,x: -300 + idx * 300
+            ,template: &quot;mytemplate&quot;
+            ,scale: 0.3
+        }
+    }
+});</code></pre>
+<h3><code>method</code> template( templateName, templateData )</h3>
+<p>Adds or modify a template. If it&#39;s already defined then the old template is
+extended with the new properties.
+
+</p>
+<h3><code>method</code> apply( selector, templateName )</h3>
+<p>Applies the template to all selected steps.
+
+</p>
+<h3><code>method</code> apply( selector, templateData )</h3>
+<p>Applies the template directly by template data object.
+
+</p>
+<h3><code>method</code> apply( selector, arrayOfTemplateDatas )</h3>
+<p>Applies template data to an array of selected items.</p>
+
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/templates.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>

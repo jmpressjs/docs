@@ -73,27 +73,22 @@
 </ul>
 </div>
 <div class="content">
-<h1>Active</h1>
-<p>This component manages the step active settings.
+<h1>Hash in URL</h1>
+<p>This component handles updates to and change events from the url hash. It also handles clicks on link to other steps. As the initial hash also defines a starting step which should override the Starting Step component, this component should be included after that.
 
 </p>
-<h3><code>property</code> activeClass : <code>&#39;active&#39;</code></h3>
-<p>A class name to set on the current step.
+<h3><code>property</code> hash.use : <code>true</code></h3>
+<p>Whether the url hash should be used with jmpress.
 
 </p>
-<h3><code>property</code> nestedActiveClass : <code>&#39;nested-active&#39;</code></h3>
-<p>A class name to set on all parents of the current step.
+<h3><code>property</code> hash.update : <code>true</code></h3>
+<p>Whether the url hash should be updated on step change.
 
 </p>
-<h3><code>callback</code> setActive : <code>function( element, eventData )</code></h3>
-<p>When a step is activated or selected.
+<h3><code>property</code> hash.bindChange : <code>true</code></h3>
+<p>Whether changes of the url hash and clicks on link should be converted into step selects.</p>
 
-</p>
-<h3><code>callback</code> setInactive : <code>function( element, eventData )</code></h3>
-<p>When a previously active step is de-activated or not
-</p>
-
-<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/active.md" class="editpage" target="_blank">Edit This Page</a><br/>
+<br/><br/><a href="https://github.com/jmpressjs/docs/edit/master/hash.md" class="editpage" target="_blank">Edit This Page</a><br/>
 </div>
 </div>
 </body>
