@@ -69,7 +69,7 @@ Set the CSS animation values for transitions between slides.
 ``` javascript
 $('#jmpress').jmpress({
 	animation: {
-		transformOrigin: 'center center', // Point on which to transform
+		transformOrigin: 'center center', // Point on which to transform (unused)
 		transitionDuration: '5s',         // Length of animation
 		transitionDelay: '500ms',         // Delay before animating
 		transitionTimingFunction: 'ease'  // Animation effect
