@@ -81,6 +81,18 @@ $('#jmpress').jmpress({
 
 See [Mozilla CSS docs](https://developer.mozilla.org/en/CSS/transform) for more info.
 
+### `property` originX and originY
+
+Set the alignment of the steps inside the container. The default is `50%` `50%` which centers the steps.
+
+``` javascript
+$('#jmpress').jmpress({
+	originX: "0%",
+	originY: "100%"
+	// Steps are aligned to the bottom left corner.
+});
+```
+
 ## Methods
 
 ### `method` init( ) - shortcut .jmpress( )
