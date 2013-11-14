@@ -134,6 +134,15 @@
 <p>See <a href="https://developer.mozilla.org/en/CSS/transform">Mozilla CSS docs</a> for more info.
 
 </p>
+<h3><code>property</code> originX and originY</h3>
+<p>Set the alignment of the steps inside the container. The default is <code>50%</code> <code>50%</code> which centers the steps.
+
+</p>
+<pre><code class="lang-javascript">$(&#39;#jmpress&#39;).jmpress({
+    originX: &quot;0%&quot;,
+    originY: &quot;100%&quot;
+    // Steps are aligned to the bottom left corner.
+});</code></pre>
 <h2>Methods</h2>
 <h3><code>method</code> init( ) - shortcut .jmpress( )</h3>
 <p>Initializes jmpress with the default config (like impress.js).
