@@ -15,7 +15,7 @@ Thank you for using and contributing to jmpress.js!
 
 * Install [Node.js](http://nodejs.org/) and [git](http://git-scm.com/).
 * Install [Grunt](http://gruntjs.com): `npm install grunt-cli -g`.
-* Clone the dev branch of jmpress.js: `git clone -b dev git://github.com/jmpressjs/jmpress.js.git && cd jmpress.js`.
+* Clone the jmpress.js repo: `git clone git://github.com/jmpressjs/jmpress.js.git && cd jmpress.js`.
 * Run `npm install` to install the development dependencies.
 * Finally run `grunt` to build.
 
@@ -40,8 +40,6 @@ jmpress.js uses [QUnit](http://docs.jquery.com/QUnit) for testing. Please run `/
 ## Pull Requests
 
 Good news! We accept pull requests!
-
-Please work and pull against the `dev` branch to make sure you are using the latest code. Thanks!
 
 ## Docs
 
