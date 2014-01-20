@@ -8,7 +8,7 @@ Inline Next / Prev
 
 ``` html
 <div id="jmpress">
-	<div class="step" id="a" data-next="c">A</div>
+	<div class="step" id="a" data-next="#c">A</div>
 	<div class="step" id="b">B</div>
 	<div class="step" id="c">C</div>
 	<div class="step" id="d">D</div>
